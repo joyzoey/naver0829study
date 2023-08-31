@@ -55,16 +55,14 @@ public class ExamEx8 {
 //		System.out.println("십원짜리 "+money5+"장");
 		
 		//출력3
-		String smoney= args[0];
-		int money=Integer.parseInt(smoney);
+		int money=Integer.parseInt(args[0]);
 		System.out.println("money : "+money+" 원");
 		System.out.println("만원짜리 "+money/10000+"장");
 		System.out.println("천원짜리 "+money%10000/1000+"장");
-		System.out.println("백원짜리 "+money%1000/100+"장");
-		System.out.println("십원짜리 "+money%100/10+"장");
-		System.out.println("십원짜리 "+money%10+"장");
-		
-
+		System.out.println("오백원짜리 "+money%1000/500+"개");
+		System.out.println("백원짜리 "+((money%1000/100)-(money%1000/500)*5)+"개");
+		System.out.println("십원짜리 "+money%100/10+"개");
+		System.out.println("십원짜리 "+money%10+"개");
 
 	}
 
