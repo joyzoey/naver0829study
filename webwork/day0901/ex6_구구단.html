@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--구구단 2-9까지 입력 받아서 구구단 출력,
+        2~9 아닐 경우 이미지 아무거나 출력-->
+
+    <script>
+        let n=prompt("출력할 구구단 숫자를 입력하세요",2);
+        if(n<2 || n>9){
+            document.write(`<img src="../연예인사진/shinsekyeong.jpg">`);
+        }else{
+
+            document.write(`**${n}단**<br>`);
+            for(let i=1; i<=9; i++){
+                let a=n*i;
+                document.write(`${n}x${i}=${a}<br>`);
+            }
+            
+        }
+
+    </script>
+
+
+    
+</body>
+</html>

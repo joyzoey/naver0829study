@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <!--start와 end값을 입력받아 해당 구구단 출력
+            가로방향 자바에서 처럼
+            단 start가 end보다 클 경우 두 값을 바꾼 후 출력-->
+
+        <script>
+            let n=prompt("시작할 구구단 숫자를 입력하세요.",2);
+            let m=prompt("끝낼 구구단 숫자를 입력하세요.",9);
+        
+            if(n>m){
+                let temp=n;
+                n=m;
+                m=temp;
+            }
+            for(let i=n; i<=m; i++){
+                document.write(`<br><br>&nbsp&nbsp**&nbsp${i}단&nbsp**<br><br>`);
+                for(let j=1; j<=9; j++){
+                    let a=i*j;
+                    document.write(`&nbsp${i}&nbspx&nbsp${j}&nbsp=&nbsp${a}<br>`);
+                }
+                
+            }
+            
+        
+        </script>
+
+</body>
+
+</html>

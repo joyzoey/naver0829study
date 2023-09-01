@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Hahmlet&family=Pacifico&family=Salsa&display=swap" rel="stylesheet">    
+    <style>
+        /*style 영역에서의 주석처리*/
+        span{
+            font-family:'Pacifico';
+        }
+
+        /*class:.,id:# 으로 스타일 적용*/
+        .one{ /*태그 상관없이 class 명이 one인 경우 모두 적용*/
+            font-size: 30px;
+        }
+
+        div.one{ /*div 태그의 one class에만 적용*/
+            color:palevioletred;
+        }
+
+        .two,span.three{ /*class가 two인 모든 태그와 span중 three인 태그 적용*/
+            background-color: bisque;
+        }
+
+        /*div 태그 중 클래스명이 one,three 인 경우에만 border적용*/
+        div.one,div.three{
+            border: 5px solid darksalmon; /*굵기,선종류,색상:따로줘도 같이줘도 가능*/
+        }
+
+        /*border 속성을 각각 따로 주고자 할경우*/
+        h1{
+            border-width: 10px;
+            border-style: double;
+            border-color: gray;
+            border-radius : 20px; /*테두리선둥글게*/
+        }
+
+    </style>
+
+</head>
+<body>
+    <!--스타일 정의 : 태그 삽입형-->
+    <h1 style="color:palevioletred; font-family:'Hahmlet';
+               background-color: #f0bcff;">너무 졸려요 졸령</h1>
+    <h1 style="color:rgb(150,190,167); font-family: 'salsa';
+               background-color: rgba(100,234,200,0.5);">But No Sleep</h1>
+
+    <span class="one">Java</span>
+    <span class="two">HTML</span>
+    <span class="three">JavaScript</span>
+    <hr>
+    <div class="one">소나타</div>
+    <div class="two">그랜저</div>
+    <div class="three">벤츠</div>
+    
+</body>
+</html>

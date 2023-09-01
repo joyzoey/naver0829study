@@ -23,21 +23,21 @@ public class Ex5_forExam {
 //		for(int i=1; i<=n; i++) sum+=i;
 //		System.out.println("합계는 "+sum);
 		
-//		//2
-//		Scanner sc=new Scanner(System.in);
-//		System.out.print("알고 싶은 구구단 숫자를 입력하세요. : ");
-//		int n=sc.nextInt();
-//		if(n<1 || n>9) {
-//			System.out.println("잘못 입력하여 종료합니다.");
-//			return;
-//		} else {
-//			System.out.println();
-//			System.out.println("** "+n+"단 **");
-//			for (int i=1; i<=9; i++) {
-////				System.out.println(n+" x "+i+" = "+n*i);
-//				System.out.printf("%d X %d = %2d\n",n,i,n*i);//열맞추기 가능
-//			}
-//		}
+		//2
+		Scanner sc=new Scanner(System.in);
+		System.out.print("알고 싶은 구구단 숫자를 입력하세요. : ");
+		int n=sc.nextInt();
+		if(n<1 || n>9) {
+			System.out.println("잘못 입력하여 종료합니다.");
+			return;
+		} else {
+			System.out.println();
+			System.out.println("** "+n+"단 **");
+			for (int i=1; i<=9; i++) {
+//				System.out.println(n+" x "+i+" = "+n*i);
+				System.out.printf("%d X %d = %2d\n",n,i,n*i);//열맞추기 가능
+			}
+		}
 //		
 		
 	}
