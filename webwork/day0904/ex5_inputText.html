@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Hahmlet&family=Pacifico&family=Salsa&display=swap" rel="stylesheet">    
+
+
+    <style>
+        div#msg{
+            font-family: 'Hahmlet';
+            font-size: 30px;
+            margin-top: 30px;
+            color: blueviolet;
+        }
+
+    </style>
+
+    
+</head>
+<body>
+    <input type="text" id="txtmsg">
+    <input type="button" id="btnl" value="읽기">
+    <div id="msg">Message 출력되는 곳</div>
+    <script>
+        let t=document.getElementById("txtmsg");
+        let b=document.getElementById("btnl");
+        let msg=document.getElementById("msg");
+
+        //버튼 이벤트-버튼 클릭시 해당 함수 호출
+        b.onclick=function(){
+            //입력한 문자열 가져온다
+            let data=t.value;
+        
+            //msg에 출력
+            //msg.innerText="<u>"+data+"</u>";//inner text 는 태그도 그대로
+            //msg.innerHTML="<u>"+data+"</u>";//태그 적용하려면 innerHTML
+            msg.innerHTML+="<br><u>"+data+"</u>";//+=기존데이터에 추가로 출력
+
+            //입력 끝난 후 입력한 값을 지우고 텍스트 입력창에 커서 위치(포커스)
+            t.value="";
+            t.focus();
+
+        }
+
+    </script>
+</body>
+</html>
