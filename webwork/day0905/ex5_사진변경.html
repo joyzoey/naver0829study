@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #buttons{
+            position: absolute;
+            left: 650px;
+            top: 300px;
+        }
+        #buttons button{
+            width: 60px;
+            height: 60px;
+            font-size: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 3개의 버튼, 작게,크게,랜덤
+        변화는 5px씩 최소 50px 최대 600px
+        랜덤 버튼에서는 1~20 난수를 구한 후 해당 사진으로 변경-->
+    <img src="../연예인사진/12.jpg" style="width: 300px;" id="photo">
+    <div id="buttons">
+        <button type="button" id="btnminus">-</button>
+        <button type="button" id="btnplus">+</button>
+        <button type="button" id="btndice">?</button>
+    </div>
+
+    <script>
+        document.getElementById("btnplus").onclick=function(){
+            //현재이미지의 크기를 얻어보자
+            let m=document.getElementById("photo");
+            let fs=parseInt(m.style.width,10);//10진수로 숫자부분만 가져옴
+
+            //얻어온 크기에 5증가-최대600
+            if (fs<=600){
+                fs+=5;
+            }else{
+                alert("그만 키워");
+            }
+            //글꼴 스타일 변경
+            m.style.width=fs+"px";
+        }
+        document.getElementById("btnminus").onclick=function(){
+            //현재이미지의 크기를 얻어보자
+            let m=document.getElementById("photo");
+            let fs=parseInt(m.style.width,10);//10진수로 숫자부분만 가져옴
+
+            //얻어온 크기에 5감소-최소50
+            if (fs>=50){
+                fs-=5;
+            }else{
+                alert("그만 줄여");
+            }
+            //글꼴 스타일 변경
+            m.style.width=fs+"px";
+        }
+
+        let rnd;
+        document.getElementById("btndice").onclick=function(){
+            //1~20 사이 난수구하기
+            rnd=parseInt((Math.random()*20))+1;
+            let newpho=document.getElementById("photo");
+            newpho.setAttribute("src",`../연예인사진/${rnd}.jpg`);           
+        }
+
+
+    </script>
+
+</body>
+</html>
