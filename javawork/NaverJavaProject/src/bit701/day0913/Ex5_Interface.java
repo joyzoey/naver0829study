@@ -5,16 +5,16 @@ package bit701.day0913;
 // 어차피 백프로 상수와 추상 메서드로만 구성이 되어있기때문
 //interface 도 new 로 생성할수없다
 
-interface InterA
+interface InterA //추상객체
 {
-	int SCORE=100;//final 상수임
-	public void play();//abstract 메서드임
+	int SCORE=100;//public static final 특성의 상수=상수명대문자
+	public void play();//abstract=추상 메소드
 	public void study();
 }
 
 //일반 클래스가 interface 를 구현할경우 implements 로 구현
 //인터페이스를 구현한경우 반드시 모든 메서드를 오버라이드해야만 한다
-class My implements InterA
+class My implements InterA //구현객체
 {
 
 	int myscore=SCORE;
@@ -33,7 +33,7 @@ class My implements InterA
 		System.out.println("점수 변경함:"+myscore);
 	}
 
-	//My클래스만이 갖구있는 메서드
+	//My클래스의 메서드
 	public void processMy()
 	{
 		System.out.println("My 클래스가 단독으로 처리하는 작업");
@@ -44,11 +44,14 @@ public class Ex5_Interface {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		//인터페이스 변수선언과 구현 객체 대입
 		InterA a=new My();
 		a.play();
 		a.study();
 		//a.processMy();//오류발생-오버라이드 메서드가 아니므로 My로 선언시에만 호출가능
 		System.out.println("---------------");
+		//my클래스의 메소드 호출
 		My b=new My();
 		b.play();
 		b.study();
