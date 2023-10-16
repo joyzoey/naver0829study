@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Permanent+Marker&family=Single+Day&display=swap" rel="stylesheet">
+<link
+   href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+   rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<style>
+    body * {
+        font-family: 'Jua';
+    }
+    .mytooltip{
+      position: absolute;
+      line-height: 1.5;
+      color: black;
+      width: 200px;
+      background-color: #f90;
+      border: 2px solid white;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 30px;
+      opacity: 0.8;
+      display: none;
+   }
+   .view{
+	   cursor: pointer;
+	   text-decoration: underline;
+	   background-color: #ccc;
+   }
+   ol.today li{
+	   width: 200px;
+	   cursor:pointer;
+	   background-color: #ccc;
+   }
+   ol.today li:hover{
+	   background-color: rgba(0,0,0,0.3);
+   }
+</style>
+<script>
+   $(function(){
+      $("a").bind({
+         mousemove:function(e){
+            $("div.mytooltip").css({
+               "left":e.pageX+"px",
+               "top":e.pageY+"px"
+            });
+         },
+         mouseover:function(){
+            $("div.mytooltip").fadeIn('fast');
+         },
+         mouseout:function(){
+            $("div.mytooltip").fadeOut('fast');
+         }
+      });
+      
+      $(".view").bind({
+         mousemove:function(e){
+            
+            $("div.mytooltip").css({
+               "left":e.pageX+"px",
+               "top":e.pageY+"px"
+            });
+         },
+         mouseover:function(){
+            let color=$(this).attr("color");
+            //let text=$(this).text();
+            let text=$(this).attr("content");
+            $("div.mytooltip").css("color",color).html(text);
+            $("div.mytooltip").fadeIn('fast');
+         },
+         mouseout:function(){
+            $("div.mytooltip").fadeOut('fast');
+         }
+      });
+      
+      $("ol.today li").bind({
+         mousemove:function(e){
+            $("div.mytooltip").css({
+               "left":e.pageX+"px",
+               "top":e.pageY+"px"
+            });
+         },
+         mouseover:function(){
+            let photo=$(this).attr("photo");
+            let text=$(this).text();
+            $("div.mytooltip").html(`<b>${text}</b><br><img src="${photo}" border=2 width=100>`);
+            $("div.mytooltip").fadeIn('fast');
+         },
+         mouseout:function(){
+            $("div.mytooltip").fadeOut('fast');
+         }
+      });
+   });
+</script>
+</head>
+<body>
+   <h4 class="alert alert-danger">Tooltip 링크에 마우스를 올려보세요</h4>
+   <br><br>
+   <a style="font-size: 25px;cursor: pointer;">Tooltip Tooltip Tooltip Tooltip </a>
+   
+<pre>
+(서울=연합뉴스) 이대희 기자 = 더불어민주당 이재명 대표의 '백현동 개발 특혜 의혹' 사건이 '대장동·위례 특혜 의혹' 사건 담당 재판부에 배당됐다. 두 사건을 병합 심리할지 여부는 아직 결정되지 않았다.
+
+서울중앙지법은 검찰이 12일 기소한 이 대표의 백현동 사건을 형사합의33부(<b class="view" color="blue" content="가나다라마바사아자차카타파하 성남시장일때 이재명님 왕좋았는디...">김동현 부장판사</b>)에 배당했다고 밝혔다. 검찰은 이날 백현동 개발 특혜 의혹으로 이 대표를 불구속 기소하면서 대장동·위례 사건과 병합해 달라고 법원에 신청했다.
+
+부패 사건 전담인 이 재판부는 지난 3월 기소된 이 대표의 대장동·위례신도시 개발 비리와 성남FC 후원금 의혹 사건을 심리하고 있다. 이달 6일 첫 재판이 열렸다.
+
+법원은 백현동과 대장동 사건을 병합할지, 따로 병행 심리할지는 향후 형사합의33부가 결정할 예정이라고 밝혔다.
+
+검찰은 두 사건 모두 <b class="view" color="green" color="blue" content="가나다라마바사아자차카타파하 성남시장일때 이재명님 왕좋았는디...">이 대표</b>가 성남시장 재직 시절 발생한 범행으로, 개발업자나 브로커에게 개발이익을 몰아주는 범행 구조가 유사하고 피고인이 동일한 점 등을 고려해 병합을 신청했다고 설명했다.
+
+이 대표는 성남시장 재직시절인 <b class="view" color=magenta color="blue" content="가나다라마바사아자차카타파하 성남시장일때 이재명님 왕좋았는디...">2014년 4월∼2018년 3월 분당구 백현동 개발사업</b> 과정에서 민간업자인 정바울 아시아디벨로퍼 회장에게 특혜를 몰아줘 1천356억원의 이익을 차지하게 한 대신 성남도시개발공사에 최소 200억원의 손해를 끼친 혐의로 이날 불구속 기소됐다.
+
+2vs2@yna.co.kr
+
+이대희(2vs2@yna.co.kr)
+   </pre>
+   
+<hr>
+<h2>오늘 나의 식사 및 쇼핑목록</h2>
+<ol type="1" class="today">
+   <li photo="../food/1.jpg">에그샌드위치</li>
+   <li photo="../food/11.jpg">망고빙수</li>
+   <li photo="../shop/8.jpg">회색스웨터</li>
+   <li photo="../shop/29.jpg">여름용모자</li>
+</ol>
+
+   <div class="mytooltip">
+      Java<br>
+      HTML5<br>
+      SpringBoot<br>
+      React<br>
+      jQuery
+   </div>
+</body>
+</html>

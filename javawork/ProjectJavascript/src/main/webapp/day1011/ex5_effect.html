@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Permanent+Marker&family=Single+Day&display=swap" rel="stylesheet">
+<link
+   href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+   rel="stylesheet">
+   <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<style>
+    body * {
+        font-family: 'Jua';
+    }
+</style>
+<script>
+	$(function(){
+		//제목
+		$(".title>b").css({
+			"cursor":"pointer",
+			"font-size":"22px"
+			
+		});
+		//내용은 안보이게
+		$("div.content").hide();
+		
+		//제목클릭시 해당 기사가 slidown효과로 내려오게
+		$(".title>b").click(function(){
+			$(this).next().slideDown('slow');
+			
+			//나머지는 내용이 닫히게
+			$(this).parent().siblings().find("div.content").slideUp('slow');
+		})
+	});
+</script>
+</head>
+<body>
+   <div class="title alert alert-danger">
+         <b>[2023 국감] 한동훈 "법무부는 인사 자료 수집 역할만…가부 판단 안해"</b>
+         <div class="content">
+	        한 장관은 이날 '(국회의 임명동의 표결에서) 낙마한 이균용 대법원장 후보자 검증을 
+	        법무부가 했느냐'는 송기헌 더불어민주당 의원의 질문을 받고 이같이 밝혔다.
+			한 장관은 "대법원장은 사법부 제청을 거치지 않고 대통령이 직접 지명하기 때문에 
+			과거에도 정부 측에서 검증을 해왔다"며 "법무부 인사정보관리단이 자료를 수집하고 
+			대통령실 공직기강비서관실에서 판단하는 구조로 진행됐다"고 설명했다. 
+			이어 "저희는 기계적으로 검증한 자료를 넘기고 따로 추천하거나 그러지 않는다"면서 
+			법 위반 여부에 대한 의견을 덧붙이지 않는다고 강조했다.
+         </div>
+   </div>
+   <div class="title alert alert-info">
+         <b>탕후루 국감장 등장 예정…"단맛 중독성, 니코틴과 비슷"</b>
+         <div class="content">
+	         최근 청소년 설탕 과다 섭취 문제가 대두되면서 오는 12일 국회 국정감사에 
+	         탕후루(설탕과 물엿을 입힌 과일 꼬치) 프랜차이즈 운영업체 대표가 증인으로 
+	         나올 예정인 가운데 전문가들은 단맛이 중독성이 강해 과도한 섭취는 주의해야 
+	         한다고 당부했다.
+	         대한비만학회 부회장 김경곤 가천대 길병원 가정의학과 교수는 11일 
+	         시비에스(CBS) 라디오 프로그램 ‘김현정의 뉴스쇼’에서 “단순당 같은 경우 
+	         몸에서 에너지가 필요할 때 소화 과정이 복잡하지 않고 먹자마자 바로 
+			흡수되고 바로 이용할 수 있어 몸에서 좋아할 수밖에 없다”며 이렇게 말했다.
+         </div>
+   </div>
+	<div class="title alert alert-warning">
+	     <b>"기껏 분리수거했는데 또 섞였다"…1300억 낭비한 환경부</b>
+	     <div class="content">
+		        코로나19 때 아파트 등 공동주택 폐기물 선별장에 '플라스틱 분리배출 도우미'를 
+		        배치하겠다며 천억원 넘게 투입한 환경부의 정책이 사실상 세금 낭비였던 것으로 밝혀졌다.
+				11일 박대수 국민의힘 의원실에 따르면 환경부는 문재인 정부 시절인 2020년부터 2021년까지 
+				'코로나19 위기 대응 고용안정 특별대책'에 따른 '공공 및 청년 일자리(비대면·디지털 
+				정부일자리) 창출'의 일환으로 '재활용품 품질개선 지원 사업'을 실시했다.
+				플라스틱 폐기물을 분리·배출하는 방법을 모르거나 귀찮아서 그냥 버리는 주민들을 
+				돕기 위해 아파트 등 공동 주택의 선별장에 '자원관리 도우미'를 배치하는 게 사업의 취지였다. 
+				당시 비대면 소비의 증가로 급증한 플라스틱 분리수거의 순도를 높여 자원 재활용률을 높이려는 목적도 있었다.
+	     </div>
+	</div>
+   
+   
+</body>
+</html>
