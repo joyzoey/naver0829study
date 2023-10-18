@@ -23,9 +23,9 @@
 	dto.setNum(num);
 	
 	
-	//insert 메서드 호출(db저장)
+	//update 메서드 호출(db저장)
 	dao.updateShop(dto);
 	//목록 페이지로 이동(redirect)
-	response.sendRedirect("myshop.jsp");
+	response.sendRedirect("myshopDetail.jsp?num="+num);
 
 %>
