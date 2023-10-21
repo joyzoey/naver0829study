@@ -1,7 +1,6 @@
 # naver0829study
 네이버 클라우드과정 3기 수업  
 
-
 git-bash  
 
 1.git init - git과 연동할 폴더 초기화  
