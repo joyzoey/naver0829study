@@ -21,3 +21,4 @@ git remote set-url origin https://github.com/joyzoey/naver0829study.git
 처음에 한번만 이메일과 유저명 확인  
 git config --global user.name "[사용자명]"  
 git config --global user.email "[사용자이메일]"  
+
