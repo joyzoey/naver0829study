@@ -80,7 +80,7 @@
 						<a href="content.jsp?num=<%=dto.getNum() %>">
 							<%=dto.getSubject() %>
 							<% 
-							if(!dto.getPhoto().equals("no")){%>
+							if(!dto.getPhto().equals("no")){%>
 								<i class="bi bi-image photoicon"></i>
 							<% }
 							%>
