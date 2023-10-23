@@ -1,19 +1,23 @@
 package main.java.utils;
 
-/**
- * 입력 벨리데이션 체크
- */
 public class ValidationUtils {
 	
-	/**
-	 * 입력자가 숫자를 입력했는지 졍규식 표현을 사용하여 체크 한다.
-	 * 숫자만 입력하면 true
-	 * 다른게 포함되어 있으면 false
-	 * @param enterNumber
-	 * @return boolean
-	 */
+	//true는 숫자, 다른게 포함되어있을 때 에러종류에 따라 메세지송출
+	public static int errorNum (String enterNumber) {
+	    boolean numberChk = ValidationUtils.NumberChk(enterNumber); // 숫자만 입력했는지 확인
+
+	    if (!numberChk) {
+	    	return 1;
+	    } else if (enterNumber.length() != 3) {
+	    	return 2;
+	    }
+	    return 0;
+	    
+	}
+	
+	//정규표현식으로 입력내용 확인
 	public static boolean NumberChk(String enterNumber) {
 		return enterNumber.matches("[+-]?\\d*(\\.\\d+)?");
 	}
-
+	
 }

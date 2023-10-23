@@ -14,17 +14,19 @@ public class View {
 	//숫자 입력
 	public void enterNumber() {
 	    System.out.print("숫자를 입력해주세요 : ");
+	    
 	    Scanner sc = new Scanner(System.in);
-
 	    String enterNumber = sc.next();
-	    boolean numberChk = ValidationUtils.NumberChk(enterNumber); // 숫자만 입력했는지 확인
-
-	    if (!numberChk) {
+	    
+	    int errorNum = ValidationUtils.errorNum(enterNumber); //에러 체크 함수
+	    
+	    //에러 메세지 출력
+	    if (errorNum == 1) {
 	        throw new IllegalArgumentException("숫자가 아닙니다.");
-	    } else if (enterNumber.length() != 3) {
-	    	throw new IllegalArgumentException("3자리 숫자를 입력하세요.");
+	    } else if (errorNum == 2) {
+	        throw new IllegalArgumentException("3자리 숫자를 입력하세요.");
 	    }
-
+	    
 	    baseBall.setEnterNumber(Integer.parseInt(enterNumber));
 	}
 	
