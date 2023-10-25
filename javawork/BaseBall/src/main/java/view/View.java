@@ -11,33 +11,6 @@ public class View {
 	ValidationUtils validationUtils = new ValidationUtils();
 	
 	
-	//숫자 입력
-	public void enterNumber() {
-	    System.out.print("숫자를 입력해주세요 : ");
-	    
-	    Scanner sc = new Scanner(System.in);
-	    String enterNumber = sc.next();
-	    
-	    int errorNum = ValidationUtils.errorNum(enterNumber); //에러 체크 함수
-	    
-	    //에러 메세지 출력
-	    if (errorNum == 1) {
-	        throw new IllegalArgumentException("숫자가 아닙니다.");
-	    } else if (errorNum == 2) {
-	        throw new IllegalArgumentException("3자리 숫자를 입력하세요.");
-	    }
-	    
-	    baseBall.setEnterNumber(Integer.parseInt(enterNumber));
-	}
-	
-	//재시작 입력
-		public String gameReStart() {
-			Scanner s = new Scanner(System.in);
-			System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
-			
-			return s.next();
-		}
-	
 	//게임시작 문구 출력
 		public void startGameMsg() {
 			System.out.println("숫자 야구 게임을 시작합니다.");

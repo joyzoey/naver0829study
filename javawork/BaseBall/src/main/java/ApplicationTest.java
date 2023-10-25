@@ -11,12 +11,14 @@ import java.io.InputStream;
 import org.junit.jupiter.api.Test;
 
 import main.java.service.Service;
+import main.java.view.EnterView;
 import main.java.view.View;
 import main.java.vo.BaseBall;
 
 class ApplicationTest {
    
    View view = new View();
+   EnterView entView = new EnterView();
    Service service = new Service();
    BaseBall baseBall = new BaseBall();
 
@@ -46,7 +48,7 @@ class ApplicationTest {
         InputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
 
-        view.enterNumber();
+        entView.enterNumber();
         int enteredNumber = baseBall.getEnterNumber();
 
         assertEquals(123, enteredNumber);
@@ -58,7 +60,7 @@ class ApplicationTest {
         InputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
 
-        assertThrows(IllegalArgumentException.class, () -> view.enterNumber());
+        assertThrows(IllegalArgumentException.class, () -> entView.enterNumber());
     }
     
     @Test //숫자 오버 테스트
@@ -67,7 +69,7 @@ class ApplicationTest {
         InputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
 
-        assertThrows(IllegalArgumentException.class, () -> view.enterNumber());
+        assertThrows(IllegalArgumentException.class, () -> entView.enterNumber());
     }
     
     @Test //재시작 테스트
@@ -76,7 +78,7 @@ class ApplicationTest {
         InputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
 
-        String result = view.gameReStart();
+        String result = entView.gameReStart();
 
         assertEquals("1", result);
     }
