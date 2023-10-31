@@ -12,7 +12,6 @@ git-bash
     - 반대로 원격 저장소의 수정된 내용을 가져올 경우
     - git pull origin 브랜치명
 
-
 오류가 나서 새로운 것 저장소랑 연결이 안 될 경우
 git remote set-url origin https://github.com/joyzoey/naver0829study.git
 (참고로 git에서는 붙여넣기 안됨 오른쪽클릭-paste로 붙여넣기 할 것)
