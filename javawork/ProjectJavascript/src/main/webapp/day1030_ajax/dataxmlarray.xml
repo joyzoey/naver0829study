@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<stu name="이효리">
+		<ban>햇님반</ban>
+		<java>80</java>
+		<spring>87</spring>
+		<html>46</html>
+	</stu>
+	<stu name="이상순">
+		<ban>달님반</ban>
+		<java>67</java>
+		<spring>87</spring>
+		<html>42</html>
+	</stu>
+	<stu name="이금선">
+		<ban>별님반</ban>
+		<java>48</java>
+		<spring>95</spring>
+		<html>47</html>
+	</stu>
+	<stu name="이휘찬">
+		<ban>꽃잎반</ban>
+		<java>37</java>
+		<spring>65</spring>
+		<html>87</html>
+	</stu>
+	
+</data>
