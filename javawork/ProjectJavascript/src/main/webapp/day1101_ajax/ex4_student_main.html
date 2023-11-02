@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Permanent+Marker&family=Single+Day&display=swap" rel="stylesheet">
+<link
+   href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+   rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+<style>
+    body * {
+        font-family: 'Jua';
+    }
+    div.insert{
+    	position: absolute;
+    	left:200px;
+    	top:80px;
+    }
+    
+</style>
+<script>
+	$(function(){
+		//처음 시작시 모든 데이타 출력
+		list("");
+		
+		$("#txtword").keyup(function(e){
+			let search=e.target.value;
+			//$(".result").html(search);
+			list(search);
+		});
+		
+		$(document).on("click","#studentfrm",function(){
+			let formData=$(this).serialize();
+			
+			$.ajax({
+				type:"get",
+				dataType:"xml",
+				url:"ex4_studentadd.jsp",
+				data:formData,
+				success:function(res){
+					let name=$(res).find("name").text();
+					let blood=$(res).find("blood").text();
+					let phone=$(res).find("phone").text();
+					let total = 3;
+					$(".inresult").html(
+						`${total}번째 이름 ${name}을 등록했습니다`
+					);					
+			    }
+			});
+		});
+		
+		$(document).on("click","#btn1",function(){
+			$(".insert").toggle();
+		});
+		
+		$(document).on("click",".studentdel",function(){
+			let num=$(this).attr("num");
+			let a=confirm("삭제하려면 확인을 눌러주세요");
+			if(!a) return;
+			//alert(num);
+			$.ajax({
+				type:"get",
+				dataType:"html",
+				url:"ex4_studentdelete.jsp",
+				data:{"num":num},
+				success:function(res){
+					//삭제 성공 후 목록 다시 출력
+					list("");
+					//search의 검색글자 삭제
+					$("#txtword").val("");
+				}
+			});
+		});
+	
+	});
+	function list(search){
+		$.ajax({
+				type:"get",
+				dataType:"json",
+				url:"ex4_studentlist.jsp",
+				data:{"search":search},
+				success:function(res){
+					let s=`<table class="table table-striped" style="width:300px;margin:30px 10px;">`;
+					$.each(res,function(idx,item){
+						s+=
+						`
+						<tr>
+							<td colspan="1">
+								<b style="font-size:20px">${item.name}</b>
+		 						<i class="bi bi-trash studentdel" 
+		 						style="cursor: pointer;float:right;font-size:14px;"
+		 						num="${item.num}"></i>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								혈액형 : ${item.blood}형<br>
+								전화번호 : ${item.phone}
+								<br>
+								등록일 : <span style="color:gray;font-size:15px">${item.writeday}</span>
+							</td>
+						</tr>
+						`;
+					});
+					s+="</table>";
+					$(".result").html(s);
+				}
+		});		
+	}
+</script>
+</head>
+<body>
+	<div style="margin: 30px;">
+		<div class="input-group" style="width: 400px;">
+			<h5>이름 검색</h5>
+			<input type="text" class="form-control" style="width: 150px; margin-left: 50px;"
+			autofocus placeholder="검색 단어 입력" id="txtword">
+			<button type="button" class="btn btn-success" id="btn1">+</button>
+		</div>
+		<div style="margin-left: 20px; font-size: 22px;" class="result">
+			</div>
+		<div style="margin-left: 250px; font-size: 22px;" class="insert">
+			<form id="studentfrm">
+			<table class="table table-bordered" style="width:300px;margin:30px 10px;">
+				<tr>
+					<td align="center" width="100">이름</td>
+					<td>
+					<input type="text" name="name" class="form-control"
+						 required="required" autofocus="autofocus">
+					</td>
+				</tr>
+				<tr>
+					<td align="center" width="100">혈액형</td>
+					<td>
+					<input type="text" name="blood" class="form-control">
+					</td>
+				</tr>
+				<tr>
+					<td align="center" width="100">전화번호</td>
+					<td>
+					<input type="text" name="phone" class="form-control">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+					<button type="submit" class="btn btn-success" id="btn2">추가</button>
+					</td>
+				</tr>
+			</table>
+			</form>
+			<div class="inresult" style="text-align:center;">결과</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -29,7 +29,8 @@
 		$.ajax({
 				type:"get",
 				dataType:"json",
-				data:"name="+name+"&addr="+addr,/*방법1*/
+				//data:"name="+name+"&addr="+addr,/*방법1*/
+				data:{"name":name,"addr":addr},/*방법 2*/
 				url:"ex1_dataread.jsp",
 				success:function(res){
 					$(".result").html(`${res.name} 님의 나이는 

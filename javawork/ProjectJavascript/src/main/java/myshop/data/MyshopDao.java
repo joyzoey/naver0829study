@@ -12,6 +12,45 @@ import mysql.db.DbConnect;
 public class MyshopDao {
 	DbConnect db=new DbConnect();
 
+	//검색결과 출력
+	public List<MyshopDto> getSearchSangpum(String search)
+	{
+		List<MyshopDto> list=new Vector<MyshopDto>();
+		Connection conn=db.getConnection();
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		
+		String sql="select * from myshop where sangpum like ? order by num";
+
+		try {
+			pstmt=conn.prepareStatement(sql);
+			//바인딩
+			pstmt.setString(1, "%"+search.trim()+"%");
+			rs=pstmt.executeQuery();
+
+			while(rs.next())
+			{
+				MyshopDto dto=new MyshopDto();//반드시 while문 안에 선언
+				dto.setNum(rs.getInt("num"));
+				dto.setSangpum(rs.getString("sangpum"));
+				dto.setPrice(rs.getInt("price"));
+				dto.setColor(rs.getString("color"));
+				dto.setPhoto(rs.getString("photo"));
+				dto.setWriteday(rs.getTimestamp("writeday"));
+				//list에 추가
+				list.add(dto);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			db.dbClose(rs, pstmt, conn);
+		}
+
+		return list;
+	}
+	
+	
 	//전체 출력
 	public List<MyshopDto> getAllSangpums()
 	{
