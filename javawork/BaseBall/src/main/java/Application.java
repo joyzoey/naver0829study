@@ -1,5 +1,6 @@
 package main.java;
 
+
 import main.java.controller.MainCtrl;
 
 public class Application {
