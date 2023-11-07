@@ -6,12 +6,14 @@
 	String name=request.getParameter("name");
 	String blood=request.getParameter("blood");
 	String phone=request.getParameter("phone");
-	
+	//dao
 	StudentDao dao=new StudentDao();
+	//dto
 	StudentDto dto=new StudentDto();
 	dto.setName(name);
 	dto.setBlood(blood);
 	dto.setPhone(phone);
 	
+	//insert
 	dao.insertStudent(dto);
 %>

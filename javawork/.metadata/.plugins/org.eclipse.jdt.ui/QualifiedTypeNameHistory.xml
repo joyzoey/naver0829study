@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.awt.Color"/>
-    <fullyQualifiedTypeName name="java.awt.event.ItemListener"/>
     <fullyQualifiedTypeName name="org.w3c.dom.css.RGBColor"/>
     <fullyQualifiedTypeName name="javax.swing.JRadioButton"/>
     <fullyQualifiedTypeName name="javax.swing.ButtonGroup"/>
@@ -59,5 +57,7 @@
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="java.sql.Time"/>
+    <fullyQualifiedTypeName name="teashop.data.TeaShopDto"/>
     <fullyQualifiedTypeName name="java.util.Vector"/>
 </qualifiedTypeNameHistroy>

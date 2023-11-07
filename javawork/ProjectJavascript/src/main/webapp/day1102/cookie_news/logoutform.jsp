@@ -14,16 +14,18 @@
     }
 </style>
 </head>
+
+
 <body>
-	<form action="loginaction.jsp" method="post">
-		<div class="input-group" style="width:300px;">	
-			<b>암호 입력</b>
-			<input type="password" class="form-control" autofocus required
-				style="width:100px; margin-left:10px;" name="pass">
-				
-			<button type="submit" class="btn btn-sm btn-danger">로그인</button>
-		</div>
-	</form>
 	
+	<div class="input-group" style="width:500px;">
+		<h3>고객님이 로그인 중입니다.</h3>
+		
+		<button type="button" class="btn btn-danger"
+			style="width:100px; margin-left:20px;"
+			onclick="location.href='logoutaction.jsp'">로그아웃</button>
+			
+			
+	</div>	
 </body>
 </html>

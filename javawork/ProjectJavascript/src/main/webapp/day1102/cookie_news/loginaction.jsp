@@ -12,13 +12,14 @@
 		cookie.setPath("/");
 		//브라우저에 쿠키저장
 		response.addCookie(cookie);
+		//메인페이지로 이동
+		response.sendRedirect("loginmain.jsp");
 	} else{%>
 		<script>
 			alert("비밀번호가 맞지 않습니다");
 			history.back();
 		</script>
 	<%}
-	//메인페이지로 이동
-	response.sendRedirect("loginmain.jsp");
+	
 
 %>

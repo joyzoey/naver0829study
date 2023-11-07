@@ -10,6 +10,7 @@ public class MyshopDto {
 	private String color;
 	private Timestamp writeday;
 	
+	
 	public int getNum() {
 		return num;
 	}
@@ -46,7 +47,6 @@ public class MyshopDto {
 	public void setWriteday(Timestamp writeday) {
 		this.writeday = writeday;
 	}
-	
 	
 	
 	

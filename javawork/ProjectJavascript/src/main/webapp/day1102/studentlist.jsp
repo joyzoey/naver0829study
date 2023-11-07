@@ -1,6 +1,6 @@
 <%@page import="org.json.simple.JSONObject"%>
-<%@page import="org.json.simple.JSONArray"%>
 <%@page import="java.text.SimpleDateFormat"%>
+<%@page import="org.json.simple.JSONArray"%>
 <%@page import="student.data.StudentDto"%>
 <%@page import="java.util.List"%>
 <%@page import="student.data.StudentDao"%>
@@ -15,14 +15,14 @@
 	JSONArray arr=new JSONArray();
 	for(StudentDto dto:list)
 	{
-		JSONObject ob =new JSONObject();
+		JSONObject ob=new JSONObject();
 		ob.put("num",dto.getNum());
 		ob.put("name",dto.getName());
 		ob.put("blood",dto.getBlood());
 		ob.put("phone",dto.getPhone());
 		ob.put("writeday",sdf.format(dto.getWriteday()));
-		
-		arr.add(ob);
+		//배열에 추가
+		arr.add(ob);		
 	}
 %>
-<%=arr.toString() %>
+<%=arr.toString()%>
