@@ -41,6 +41,8 @@ public class ShopController {
 	@GetMapping("/food/photo/detail")
 	public String list3(Model model){
 		
+		
+		
 		String name="±è³ªÇý";
 		String addr="¼­¿ï½Ã °­³²±¸";
 		List<String> food=new ArrayList<String>();

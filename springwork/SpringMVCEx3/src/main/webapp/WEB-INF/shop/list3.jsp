@@ -21,6 +21,7 @@
 	<c:forEach var="photo" items="${food }">
 		<img src="../../photo/${photo }" width="300">
 	</c:forEach>
+	
 	<h3>이름 : ${name }</h3>
 	<h3>위치 : ${addr }</h3>
 
