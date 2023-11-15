@@ -18,7 +18,14 @@
 </style>
 </head>
 <body>
+<h2>폼 #1 결과 출력</h2>
 
-
+<h3>
+	이름 : ${mdto.name }<br>
+	핸드폰 : ${mdto.hp }<br>
+	주소 : ${mdto.addr }<br>
+	파일명 : ${mdto.photo }<br>
+</h3>
+<img src="../photo/${mdto.photo }" width="300">
 </body>
 </html>
