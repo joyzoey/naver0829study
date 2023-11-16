@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Permanent+Marker&family=Single+Day&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 <style>
    body * {
        font-family: 'Jua';
@@ -23,6 +24,41 @@
 		<button type="button" class="btn btn-outline-success"
 		onclick="location.href='./writeform'" style="float:right;">글쓰기</button>
 	</h3>
+	<table class="table table-striped" style="margin-top:30px;text-align:center;width: 600px;">
+		<thead>
+			<tr>
+				<th width="50">번호</th>
+				<th width="250">제목</th>
+				<th width="80">작성자</th>
+				<th width="100">작성일</th>
+				<th width="50">조회</th>
+			</tr>
+		</thead>
+		<tbody>
+		<c:forEach var="dto" items="${list }" varStatus="n">
+			<tr>
+				<td>${totalCount-n.index }</td>
+				<td style="text-align: left;">
+					<a href="./content?num=${dto.num }" style="color:black; text-decoration: none;">
+						${dto.subject }
+						<c:if test="${dto.photo!='no' }">
+							<i class="bi bi-image photoicon"></i>
+						</c:if>
+						<c:if test="${dto.acount>0 }">
+							&nbsp;
+							<span style="color: red;">(${dto.acount })</span>
+						</c:if>
+					</a>
+				</td>
+				<td>${dto.writer }</td>
+				<td>
+					<fmt:formatDate value="${dto.writeday }" pattern="yyyy.MM.dd."/>
+				</td>
+				<td>${dto.readcount }</td>
+			</tr>
+		</c:forEach>
+		</tbody>
+	</table>
 </div>
 
 </body>

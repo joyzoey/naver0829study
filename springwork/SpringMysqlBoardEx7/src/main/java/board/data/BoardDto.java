@@ -1,7 +1,6 @@
 package board.data;
 
 import java.sql.Timestamp;
-
 import lombok.Data;
 
 @Data
@@ -13,4 +12,5 @@ public class BoardDto {
 	private String photo;
 	private int readcount;
 	private Timestamp writeday;
+	private int acount; //´ñ±Û°¹¼ö
 }

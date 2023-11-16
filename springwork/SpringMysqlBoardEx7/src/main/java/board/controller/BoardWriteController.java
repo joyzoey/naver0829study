@@ -22,15 +22,16 @@ import lombok.AllArgsConstructor;
 @RequestMapping("/simple")
 @AllArgsConstructor
 public class BoardWriteController {
-
 	private BoardDao boardDao;
 	
+	//추가페이지로 이동
 	@GetMapping("/writeform")
 	public String form()
 	{
 		return "writeform";
 	}
 	
+	//db에추가 redirect 목록페이지 재접속
 	@PostMapping("/addprocess")
 	public String add(HttpServletRequest request, @ModelAttribute BoardDto dto,
 			@RequestParam MultipartFile upload)
