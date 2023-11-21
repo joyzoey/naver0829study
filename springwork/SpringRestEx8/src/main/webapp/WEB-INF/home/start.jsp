@@ -23,7 +23,14 @@
 	<li>
 		<a href="./memo/list">간단한 메모 - 사진 1장 업로드 포함</a>
 	</li>
+	<li>
+		<a href="./storage/form">네이버 스토리지에 사진 올려보기 연습(db 저장 x)</a>
+	</li>
+	<li>
+		<a href="./storage/common">네이버 스토리지에 사진 db 저장</a>
+	</li>
 </ul>
+<hr>
 
 </body>
 </html>
