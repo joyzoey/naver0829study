@@ -15,10 +15,24 @@
        font-family: 'Jua';
    }
   
+  div.mainimage img{
+  	width: 230px;
+  	height: 230px;
+  	margin: 10px;
+  	border: 1px solid gray;
+  	border-radius: 100px;
+  }
 </style>
 </head>
+<c:set var="root" value="<%=request.getContextPath()%>"/>
 <body>
-<h2>home</h2>
-
+<h2 style="color: red;text-shadow:6px 6px 6px gray">거눙하투뿅</h2>
+<div class="mainimage">
+	<img src="${root}/res/photo/home1.png">
+	<img src="${root}/res/photo/home3.png">
+	<br>
+	<img src="${root}/res/photo/home4.png">
+	<img src="${root}/res/photo/home5.png">	
+</div>
 </body>
 </html>

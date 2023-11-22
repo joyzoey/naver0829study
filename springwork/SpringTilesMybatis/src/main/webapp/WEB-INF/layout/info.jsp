@@ -15,10 +15,24 @@
        font-family: 'Jua';
    }
   
+  div.bitinfo{
+  	width: 150px;
+  	height: 160px;
+  	border: 2px solid gray;
+  	border-radius: 10px;
+  	padding: 10px;
+  	background-color: #ddd;
+  }
 </style>
 </head>
 <body>
-<h2>info</h2>
+
+ <div class="bitinfo">
+ 	나혜하뚜거눈<br><br>
+ 	<i class="bi bi-telephone-fill"></i>
+	<br>010-2372-8129<br><br>
+ 	<i class="bi bi-person-heart" style="font-size: 1.5em;"></i>&nbsp;&nbsp;나혜쨩
+ </div>
 
 </body>
 </html>
