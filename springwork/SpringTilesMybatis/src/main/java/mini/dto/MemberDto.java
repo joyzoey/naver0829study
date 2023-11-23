@@ -16,6 +16,6 @@ public class MemberDto {
 	private String photo;
 	private String hp;
 	private String email;
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone="Asia/Seoul")
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone="Asia/Seoul")
 	private Timestamp gaipday;
 }
