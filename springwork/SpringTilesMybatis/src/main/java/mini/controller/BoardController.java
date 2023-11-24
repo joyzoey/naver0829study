@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import mini.dao.MemberDao;
 import mini.dto.BoardDto;
 import mini.dto.BoardFileDto;
 import mini.service.BoardFileService;
@@ -28,6 +29,8 @@ public class BoardController {
 	private BoardService boardService;
 	@Autowired
 	private BoardFileService boardFileService;//파일저장을 위해
+	@Autowired
+	private MemberDao memberDao;
 	
 	@GetMapping("/board/list")
 	public String boardlist(Model model, 
@@ -35,11 +38,11 @@ public class BoardController {
 	{
 		//페이징처리
 		//페이징에 처리에 필요한 변수들
-		int perPage=3; //한페이지당 보여지는 게시글의 갯수
+		int perPage=5; //한페이지당 보여지는 게시글의 갯수
 		int totalCount=0; //총 개시글의 개수
 		int totalPage;//총페이지수
 		int startNum;//각페이지당 보여지는 글의 시작번호
-		int perBlock=3; //한블럭당 보여지는 페이지의 개수
+		int perBlock=5; //한블럭당 보여지는 페이지의 개수
 		int startPage; //각블럭당 보여지는 페이지의 시작번호
 		int endPage;
 
@@ -69,6 +72,14 @@ public class BoardController {
 		//해당페이지에 보여줄 게시판 목록
 		List<BoardDto> list=boardService.getList(startNum, perPage);
 
+		//각 dto에 첨부된 사진의 갯수 저장
+		for(BoardDto dto:list)
+		{
+			int pcount=boardFileService.getPhotoByNum(dto.getNum()).size();
+			System.out.println(dto.getNum()+":"+pcount);//사진갯수확인
+			dto.setPhotocount(pcount);
+		}
+		
 		//request 에 담을 값들
 		model.addAttribute("list",list);
 		model.addAttribute("totalCount",totalCount);
@@ -154,5 +165,27 @@ public class BoardController {
 		}
 		//새글인 경우는 1페이지로, 답글인 경우는 보던 페이지로 이동
 		return "redirect:list?currentPage="+currentPage;
+	}
+	
+	@GetMapping("/board/content")
+	public String getContent(Model model, 
+			@RequestParam int num,
+			@RequestParam (defaultValue = "1") int currentPage)
+	{
+		//조회수증가
+		boardService.updateReadCount(num);
+		//num에 해당하는 dto얻기
+		BoardDto dto=boardService.getData(num);
+		//프로필 사진가져오기
+		String profile_photo=memberDao.getData(dto.getMyid()).getPhoto();
+		//사진과 사진갯수
+		List<String> photos=boardFileService.getPhotoByNum(num);
+		dto.setPhotocount(photos.size());//사진갯수
+		dto.setPhotoNames(photos);//사진파일명들
+		//model에 저장
+		model.addAttribute("profile_photo",profile_photo);
+		model.addAttribute("dto",dto);
+		model.addAttribute("currentPage",currentPage);
+		return "board/content";
 	}
 }

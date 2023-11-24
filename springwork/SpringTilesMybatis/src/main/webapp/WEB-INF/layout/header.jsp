@@ -139,7 +139,7 @@ Spring5 Mini Project
 		<i class="bi bi-gear photochange" style="font-size: 2em;cursor: pointer;"></i>
 		<input type="file" id="profile_upload" style="display: none;">
 		<div class="input-group">
-			<h5>${sessionScope.myname }님</h5>
+			<h5>${sessionScope.myname }님</h5> &nbsp;&nbsp;
 			<button type="button" class="btn btn-success"
 			style="width: 100px;" id="btnlogout">
 			로그아웃</button>

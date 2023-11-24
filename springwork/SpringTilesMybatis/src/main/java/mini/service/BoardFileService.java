@@ -17,6 +17,7 @@ public class BoardFileService {
 		boardFileDao.insertPhoto(dto);
 	}
 	
+	//num을 보내면 파일명들을 리스트형태로 반환
 	public List<String> getPhotoByNum(int num)
 	{
 		return boardFileDao.getPhotoByNum(num);
