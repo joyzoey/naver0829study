@@ -61,12 +61,13 @@
 		<c:if test="${sessionScope.loginok!=null and dto.myid==sessionScope.myid}">
 			<button type="button" class="btn btn-outline-secondary btn-sm"
 			style="width: 80px;" 
-			onclick="location.href=''">수정</button>
+			onclick="location.href='./updateform?num=${dto.num}&currentPage=${currentPage }'">수정</button>
 			<button type="button" class="btn btn-outline-secondary btn-sm"
 			style="width: 80px;" 
-			onclick="location.href=''">삭제</button>
+			onclick="location.href='./delete?num=${dto.num}&currentPage=${currentPage }'">삭제</button>
 		
 		</c:if>
+		
 
 
 	</div>
