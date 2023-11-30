@@ -62,6 +62,13 @@
 								<i class="bi bi-images" style="color:gray;"></i>
 							</c:if>
 						</a>
+						
+						<!-- 댓글 갯수 표시 -->
+						<c:if test="${dto.acount>0 }">
+							<a href="./content?num=${dto.num }&currentPage=${currentPage }">
+								<span style="color:red;">(${dto.acount })</span>
+							</a>
+						</c:if>
 					</td>
 					<td>${dto.writer }</td>
 					<td>

@@ -21,4 +21,5 @@ public class BoardDto {
 	private List<String> photoNames;
 	private Timestamp writeday;
 	private int photocount;//첨부된 사진의 갯수 저장할 용도
+	private int acount;//댓글 갯수를 저장할 변수
 }

@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Moirai+One&display=swap" rel="stylesheet">
 <style>
     body * {
+        
         font-family: 'Orbit';
     }
     
@@ -46,12 +47,13 @@
 </style>
 </head>
 <body>
-<h1 style="color:#CA8462;"><b> 여행여행 </b></h1>
-<button style="background-color:#CA8462;color:white;border:none;  text-align:center;">이전페이지로<br>돌아가기</button>
+<!--font-family: 'Moirai One';-->
+<h1 style="color:gray;">커뮤니티 > <b style="color:black">F&Q</b></h1>
+<button style="background-color:GRAY;color:white;border:none;  text-align:center;">작성</button>
 <br>
 <h1 style="color:black;"><b>&nbsp;추천코스 Q & A Q&A 정보 자유게시판</b></h1>
-<h1 style="background-color:#CA8462;color:white;text-align : center;"><b>&nbsp;&nbsp; 정보수정 &nbsp; <br>&nbsp; Q&A&nbsp;<br>&nbsp;  후기게시판&nbsp;<br>&nbsp;  자유게시판</b></h1>
-<h1 style="background-color:#EEB182;color:#CA8462;text-align : center;"><b>&nbsp;&nbsp; 1:1문의 &nbsp; <br>&nbsp; Q&A&nbsp;<br>&nbsp;  후기게시판&nbsp;<br>&nbsp;  자유게시판</b></h1>
+<h1 style="background-color:#CA8462;color:white;text-align : center;"><b>&nbsp;&nbsp; 자유게시판 관리 &nbsp; <br>&nbsp; 1:1 문의 관리&nbsp;<br>&nbsp;  여행지 관리&nbsp;<br>&nbsp;  코스 관리</b></h1>
+<h1 style="background-color:#EEB182;color:#CA8462;text-align : center;"><b>&nbsp;&nbsp; 내프로필 &nbsp; <br>&nbsp; 나의여행코스&nbsp;<br>&nbsp;  활동기록&nbsp;<br>&nbsp;  자유게시판</b></h1>
 </body>
 
 <ul class="menu">

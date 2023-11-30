@@ -20,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 import mini.dao.MemberDao;
 import mini.dto.BoardDto;
 import mini.dto.BoardFileDto;
+import mini.service.BoardAnswerService;
 import mini.service.BoardFileService;
 import mini.service.BoardService;
 
@@ -30,6 +31,8 @@ public class BoardController {
 	private BoardService boardService;
 	@Autowired
 	private BoardFileService boardFileService;//파일저장을 위해
+	@Autowired
+	private BoardAnswerService answerService;
 	@Autowired
 	private MemberDao memberDao;
 	
@@ -73,12 +76,15 @@ public class BoardController {
 		//해당페이지에 보여줄 게시판 목록
 		List<BoardDto> list=boardService.getList(startNum, perPage);
 
-		//각 dto에 첨부된 사진의 갯수 저장
 		for(BoardDto dto:list)
 		{
+			//사진갯수저장
 			int pcount=boardFileService.getPhotoByNum(dto.getNum()).size();
 			System.out.println(dto.getNum()+":"+pcount);//사진갯수확인
 			dto.setPhotocount(pcount);
+			//댓글갯수저장
+			int acount=answerService.getAnswerBoard(dto.getNum()).size();
+			dto.setAcount(acount);
 		}
 		
 		//request 에 담을 값들
