@@ -22,5 +22,7 @@ public class FaceController {
 		Map<String, String> map=new HashMap<String, String>();
 		
 		return map;
+		
+		
 	}
 }
