@@ -1,0 +1,33 @@
+package guest.data;
+
+import java.util.List;
+
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Repository;
+
+import lombok.AllArgsConstructor;
+
+@Repository
+@AllArgsConstructor
+public class GuestDao {
+	private GuestRepository guestRepository;
+	
+	//insert
+	public void addGuest(GuestDto dto)
+	{
+		guestRepository.save(dto);
+	}
+	
+	//list
+	public List<GuestDto> getAllGuests()
+	{
+		return guestRepository.findAll(Sort.by(Sort.Direction.DESC,"gnum"));
+	}
+	
+	//delete
+	public void deleteGuest(int gnum)
+	{
+		guestRepository.deleteById(gnum);
+	}
+	
+}
